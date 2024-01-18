@@ -1,0 +1,20 @@
+.bg-dark{
+    position: relative;
+    height: 100vh
+}
+
+/*MENU LATERAL*/
+.nav-pills li a:hover{
+    background-color: #14259b;
+}
+
+.lat{
+    background-color: #064068;
+    max-width: max-content;
+}
+
+
+a{
+    margin: 0px 15px 0px 15px;
+}
+

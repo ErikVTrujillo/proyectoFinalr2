@@ -1,0 +1,99 @@
+<div class="container-fluid">
+    <div class="row"> <!-- CUERPO -->
+        <div class="lat col-sm-2 ml"> <!-- MENÚ LATERAL-->
+            <app-lateral></app-lateral>
+        </div> <!-- CIERRA MENÚ LATERAL-->
+        <div class="col-sm-10"> <!-- CONTENIDO-->
+            <div class="row aling-items-center ti">
+                <p>Registrar devolución</p>
+            </div>
+            <div class="row aling-items t">
+                <p>Datos del usuario</p>
+            </div>
+            <div class="row align-items-center d-usuario"> <!-- DATOS PARA BUSCAR USUARIO-->
+                <div class="col-sm-8 tdatos">
+                    <div class="row align-items-center">
+                       <div class="col-sm-3">
+                            <label for="num-control" class="col-form-label">Número de Control:</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="num-control" class="form-control" placeholder="Ingresa número de control">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 bnbuscar"> <!-- BOTÓN BUSCAR--> 
+                    <div class="row aling-items-center">
+                        <button type="button" id="buscar" class="btn btn-warning">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>  Buscar
+                        </button>
+                    </div>               
+                </div>
+            </div>
+            <div class="row align-items-center d-usuario"> <!-- DATOS DEL USUARIO-->
+                <div class="col-sm-11 tdatos">
+                    <div class="row align-items-center">
+                        <div class="col-sm-3">
+                            <label for="nombre" class="col-form-label">Nombre:</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="nombre" class="form-control" placeholder="Ingresa nombre">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-3">
+                            <label for="ap-p" class="col-form-label">Apellido paterno:</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="ap-p" class="form-control" placeholder="Ingresa apellido paterno">
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-sm-3">
+                            <label for="ap-m" class="col-form-label">Apellido materno:</label>
+                        </div>
+                        <div class="col-sm-9">
+                            <input type="text" id="ap-m" class="form-control" placeholder="Ingresa apellido paterno">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row aling-items t">
+                <p>Préstamos actuales</p>
+            </div>
+            <div class="row align-items-center d-usuario">
+                <div class="col-sm-11 tdatos"><!-- PRESTAMOS ACTUALES -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Título</th>
+                                <th scope="col">Autor</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">Fecha Salida</th>
+                                <th scope="col">Fecha Devolucion</th>
+                                <th scope="col">Adeudos</th>
+                                <th scope="col">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td colspan="7"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="7"></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>  <!-- CIERRA CONTENIDO-->
+    </div><!-- CIERRA CUERPO -->
+</div>

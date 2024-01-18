@@ -1,0 +1,67 @@
+/*TÍTULO*/
+.ti{
+    background: #ebebeb;
+    text-align: center;
+    margin-bottom: 15px;
+
+}
+
+.ti p{
+    color: #064068;
+    font-size: 25px;
+    margin: 5px 0px;
+    font-weight: 500;
+}
+
+/*ETIQUETAS*/
+.col-form-label{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #005c3e;
+    font-weight: 500;
+}
+
+.d-usuario{
+    align-content: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+/*BÓTON*/
+.btn-warning{
+    width: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    font-weight:600;
+    font-size: 17px;
+}
+
+.boton{
+    display: flex;
+    justify-content: center;
+}
+
+/*ICONO BOTÓN GUARDAR*/
+.fa-solid{
+    padding-right: 10px;
+}
+
+/*LATERAL*/
+.lat{
+    max-width: 100%;
+    background-color: #064068;
+}
+
+/*IMAGEN LIBRO*/
+.img{
+    width: 400px;
+    height: 500px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+

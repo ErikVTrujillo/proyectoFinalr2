@@ -1,0 +1,27 @@
+*{
+    background-color: #87CEFA;
+}
+
+nav{
+    position: relative;
+    height: 65px;
+    position:relative;
+    clear: both;
+}
+
+img{
+    margin: 9px;
+    position: absolute;
+    left: 0%;
+    width: 50px;
+}
+
+h3{
+    margin: 15px 15px;
+    position: absolute;
+    font-size: 25px;
+    left: 5%;
+    font-family: sans-serif;
+}
+
+

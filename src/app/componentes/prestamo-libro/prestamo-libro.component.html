@@ -1,0 +1,201 @@
+<div class="container-fluid">
+    <div class="row"> <!-- CUERPO -->
+        <div class="lat col-sm-2 ml"> <!-- MENÚ LATERAL-->
+            <app-lateral></app-lateral>
+        </div> <!-- CIERRA MENÚ LATERAL-->
+        <div class="con col-sm-10"> <!-- CONTENIDO-->
+    <div class="row">        
+        <div class="form col-sm-6">
+            <form #usuarioForms="ngForm" (ngSubmit)="getUsuarioById(usuarioForms)">
+                <div class="row aling-items t">
+                    <p>Datos del usuario</p>
+                </div>
+                <div class="row align-items-center d-usuario"> <!-- DATOS PARA BUSCAR USUARIO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="id-usuario" class="col-form-label">ID Usuario:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="id-usuario" class="form-control" placeholder="Ingresa ID usuario" name="id_usuario"
+                                [(ngModel)]="prestamoService.prestamo.id_usuario">
+                            </div>
+                            <div class="col-sm-3 boton align-items-center">
+                                <button id="buscar" class="btn btn-warning" (onclick)="getUsuarioById(usuarioForms)">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>  Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-usuario row align-items-center"> <!-- DATOS DEL USUARIO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="nombre" class="col-form-label">Nombre:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="nombre" class="form-control" placeholder="Ingresa nombre" [(ngModel)]="usuariosService.usuario.nombre" name="nombre">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="ap-p" class="col-form-label">Apellido paterno:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="ap-p" class="form-control" placeholder="Ingresa apellido paterno" [(ngModel)]="usuariosService.usuario.ap_paterno" name="ap_paterno">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="ap-m" class="col-form-label">Apellido materno:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="ap-m" class="form-control" placeholder="Ingresa apellido paterno" [(ngModel)]="usuariosService.usuario.ap_materno" name="ap_materno">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </form>
+        </div>
+        <div class="form2 col-sm-6">
+            <form #libroForms="ngForm" (ngSubmit)="getLibroById(libroForms)">
+                <div class="row aling-items t">
+                    <p>Datos del libro</p>
+                </div>
+                <div class="row align-items-center d-usuario"> <!-- DATOS PARA BUSCAR LIBRO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="id-libro" class="col-form-label">ID Libro:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="id-libro" class="form-control" placeholder="ID Libro" name="id_libro"
+                                [(ngModel)]="prestamoService.prestamo.id_libro">
+                            </div>
+                            <div class="col-sm-3 boton align-items-center">
+                                <button id="buscar" class="btn btn-warning" (onclick)="getLibroById(libroForms)">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>  Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center d-usuario"> <!-- DATOS LIBRO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="tipo" class="col-form-label">Tipo:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="col-sm-6">
+                                    <input type="text" id="id_tipo" class="form-control" placeholder="Tipo" name="id_tipo"
+                                    [(ngModel)]="libroService.libro.id_tipo">
+                                </div>    
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="titulo" class="col-form-label">Título:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="titulo" class="form-control" placeholder="Título" [(ngModel)]="libroService.libro.titulo" name="titulo">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="autor" class="col-form-label">Autor:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="autor" class="form-control" placeholder="Autor" [(ngModel)]="libroService.libro.autor" name="autor">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="editorial" class="col-form-label">Editorial:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="id_editorial" class="form-control" placeholder="Editorial" [(ngModel)]="libroService.libro.id_editorial" name="id_editorial">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="categoria" class="col-form-label">Categoría:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="id_categoria" class="form-control" placeholder="id_categoria" [(ngModel)]="libroService.libro.id_categoria" name="id_categoria">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div> <!-- CIERRA DATOS USUARIO-->
+            </form>
+        </div>
+    </div>
+            <form #prestamosForm="ngForm" (ngSubmit)="createPrestamo(prestamosForm)">
+                <div class="row aling-items-center ti">
+                    <p>Préstamo</p>
+                </div>
+                <div class="row aling-items t">
+                    <p>Datos del préstamo</p>
+                </div>
+                <div class="d-usuario row-aling-items-center">
+                    <div class="col-sm-11 tdatos"> <!--DATOS DEL PRESTAMO-->
+                        <div class="row align-items-center">
+                            <!--<div class="col-sm-3">
+                                <label for="id-prestamo" class="col-form-label">ID Préstamo:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="id-prestamo" class="form-control" placeholder="Ingresa ID_Prestamo" name="id_prestamo" 
+                                [(ngModel)]="prestamoService.prestamo.id_prestamo">
+                            </div>-->
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="fecha-prestamo" class="col-form-label">Fecha del préstamo:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="date" id="fecha-prestamo" class="form-control" placeholder="06/11/2023" name="fecha_prestamo"
+                                [(ngModel)]="prestamoService.prestamo.fecha_prestamo">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="fecha-devolucion" class="col-form-label">Fecha de devolución:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="date" id="fecha-devolucion" class="form-control" placeholder="06/11/2023" name="fecha_devolucion"
+                                [(ngModel)]="prestamoService.prestamo.fecha_devolucion">
+                            </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="id-usuario" class="col-form-label">ID Usuario:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="id-usuario" class="form-control" placeholder="Ingresa ID usuario" name="id_usuario"
+                                [(ngModel)]="prestamoService.prestamo.id_usuario">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="id-libro" class="col-form-label">ID Libro:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="id-libro" class="form-control" placeholder="Ingresa ID Libro" name="id_libro"
+                                [(ngModel)]="prestamoService.prestamo.id_libro">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="row boton"> <!-- BOTÓN GUARDAR-->
+                    <button type="submit" class="u btn btn-warning" (onclick)="createPrestamo(prestamosForm)">
+                        <i class="fa-solid fa-floppy-disk" style="color: #FFFFFF;"></i> Guardar
+                    </button>
+                </div>
+                <hr>
+            </form>
+        </div> <!-- CIERRA CONTENIDO-->
+    </div>
+</div>

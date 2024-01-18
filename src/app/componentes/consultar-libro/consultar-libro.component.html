@@ -1,0 +1,123 @@
+<div class="container-fluid">
+  <div class="row"> <!-- CUERPO -->
+      <div class="lat col-sm-2 ml"> <!-- MENÚ LATERAL-->
+          <app-lateral></app-lateral>
+      </div> <!-- CIERRA MENÚ LATERAL-->
+      <div class="con col-sm-10"> <!-- CONTENIDO-->
+          <form  #consultasForm="ngForm" (ngSubmit)="getByTitulo(consultasForm)" #consultaAutor="ngForm" (ngSubmit)="getByAutor(consultaAutor)" #consultaTipo="ngForm" (ngSubmit)="getByTipo(consultaTipo)" #consultaCategoria="ngForm" (ngSubmit)="getByCategoria(consultaCategoria)">
+              <div class="row aling-items-center ti">
+                  <p>Consultar</p>
+              </div>
+              <div class="d-usuario row align-items-center"> <!-- DATOS USUARIO-->
+                  <div class="col-sm-11 tdatos">
+                     <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="nombre_tipo" class="col-form-label">Tipo:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="form-select" id="nombre_tipo" placeholder="Selecciona tipo" name="nombre_tipo" [(ngModel)]="libroService.libro.nombre_tipo">
+                                    <option selected >Selecciona tipo...</option>
+                                    <option  >Libros </option>
+                                    <option >Revistas</option>
+                                    <option >Enciclopedias</option>
+                                    <option >Diccionarios</option>
+                                    <option >Videos CD</option>
+                                    <option >Videos DVD</option>
+                                    <option >Cintas VHC</option>
+                                    <option >Tesis en disco</option>
+                                    <option >Tesis impresas</option>
+                                </select>                        
+                            </div>
+                            <div class="col-sm-3 boton"> <!-- BOTÓN GUARDAR-->
+                              <button type="submit" class="btn btn-warning" (click)="getByTipo(consultaTipo)">
+                                  <i class="fa-soli  fa-lg" style="color: #ffffff"></i> Buscar
+                              </button>
+                          </div>
+
+                        </div>
+                      <div class="row align-items-center">
+                          <div class="col-sm-3">
+                              <label for="Titulo" class="col-form-label">Titulo:</label>
+                          </div>
+                        <div class="col-sm-6">
+                            <input type="text" id="titulo" class="form-control" placeholder="Ingresa el titulo" name="titulo" [(ngModel)]="libroService.libro.titulo" >
+                        </div>
+                        <div class="col-sm-3 boton"> <!-- BOTÓN GUARDAR-->
+                          <button type="submit" class="btn btn-warning" (click)="getByTitulo(consultasForm)">
+                              <i class="fa-soli  fa-lg" style="color: #ffffff"></i> Buscar
+                          </button>
+                      </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                      <div class="col-sm-3">
+                          <label for="Autor" class="col-form-label">Autor:</label>
+                      </div>
+                    <div class="col-sm-6">
+                        <input type="text" id="autor" class="form-control" placeholder="Ingresa el nombre " name="autor" [(ngModel)]="libroService.libro.autor" >
+                    </div>
+                    <div class="col-sm-3 boton"> <!-- BOTÓN GUARDAR-->
+                      <button type="submit" class="btn btn-warning" (click)="getByAutor(consultaAutor)">
+                          <i class="fa-soli  fa-lg" style="color: #ffffff"></i> Buscar
+                      </button>
+                  </div>
+                </div>
+                      <div class="row align-items-center">
+                        <div class="col-sm-3">
+                        <label for="categoria" class="col-form-label">Categoría:</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-select" id="categoria" placeholder="Selecciona categoría" name="categoria" [(ngModel)]="libroService.libro.categoria">
+                                <option selected >Selecciona categoría...</option>
+                                <option >Generalidades</option>
+                                <option >Filosofía y psicología</option>
+                                <option >Religión</option>
+                                <option >Ciencias Sociales</option>
+                                <option >Lenguas</option>
+                                <option >Ciencias Básicas</option>
+                                <option >Tecnologias y Ciencias Aplicadas</option>
+                                <option >Literatura</option>
+                                <option >Bellas Artes</option>
+                                <option >Colección de consulta</option>
+                                <option >Tesis</option>
+                                <option >Revistas</option>
+                              </select>                        
+                        </div>
+                        <div class="col-sm-3 boton"> <!-- BOTÓN GUARDAR-->
+                          <button type="submit" class="btn btn-warning" (click)="getByCategoria(consultaCategoria)">
+                              <i class="fa-soli  fa-lg" style="color: #ffffff"></i> Buscar
+                          </button>
+                      </div>
+                    </div>
+                      <hr>
+                      <div class="con container pt-5">
+                        <h1 class="titulo">BUSQUEDA DE LIBROS</h1>
+                       </div>
+                       <div class="table-container">
+                        <table class="table table-bordered table-sm">
+                          <thead>
+                            <tr>
+                              <th>Típo</th>
+                              <th>Título</th>
+                              <th>Autor</th>
+                              <th>Categoría</th>
+                              <th>Editorial</th>
+                            </tr>
+                          </thead> 
+                          <tbody>
+                            <tr *ngFor="let item of libroService.libros">
+                              <td>{{item.nombre_tipo}}</td>
+                              <td>{{item.titulo}}</td>
+                              <td>{{item.autor}}</td>
+                              <td>{{item.categoria}}</td>
+                              <td>{{item.nombre_editorial}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+              </div> <!-- CIERRA DATOS USUARIO-->
+          </form>
+      </div> <!-- CIERRA CONTENIDO-->
+  </div>
+</div>

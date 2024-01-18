@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row"> <!-- CUERPO -->
+        <div class="lat col-sm-2 ml"> <!-- MENÚ LATERAL-->
+            <app-lateral></app-lateral>
+        </div> <!-- CIERRA MENÚ LATERAL-->
+        <div class="con col-sm-10"> <!-- CONTENIDO-->
+            <div class="row aling-items-center ti">
+                <p>Editoriales</p>
+            </div> 
+            <div class="row">
+                <div class="col-6">
+                    <form  #editorialForm="ngForm" (ngSubmit)="createEditorial(editorialForm)">
+                        <div class="d-usuario row align-items-center"> <!-- DATOS LIBRO-->
+                            <div class="col-sm-11 tdatos">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-3">
+                                        <label for="id-editorial" class="col-form-label">ID Editorial:</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="id-editorial" class="form-control" placeholder="Ingresa ID Editorial" name="id_editorial"
+                                            [(ngModel)]="editorialService.editorial.id_editorial">
+                                    </div>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-sm-3">
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type="text" id="nombre" class="form-control" placeholder="Ingresa nombre" name="nombre_editorial"
+                                            [(ngModel)]="editorialService.editorial.nombre_editorial">
+                                    </div>
+                                </div>
+                                <div class="row boton"> <!-- BOTÓN GUARDAR-->        
+                                    <div class="col-6">
+                                        <button type="reset" class="btn btn-warning" (click)="formReset(editorialForm)">
+                                            <i class="fa-solid fa-trash" style="color: #FFFFFF;"></i> Limpiar
+                                        </button>
+                                    </div> 
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-warning" type="submit" >
+                                            <i class="fa-solid fa-floppy-disk" style="color: #FFFFFF;"></i> Guardar
+                                        </button>
+                                    </div>       
+                                </div>
+                            </div>
+                        </div> <!-- CIERRA DATOS USUARIO-->
+                    </form>
+                </div>
+                <div class="col-6">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">ID Editorial</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="thead-light">
+                            <tr *ngFor="let item of editorialService.editoriales">
+                                <td>{{item.id_editorial}}</td>
+                                <td>{{item.nombre_editorial}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-success btn-sm bt1" (click)="editEditorial(item)">
+                                        <i class="fa-solid fa-pen-to-square f1"></i>
+                                    </button>   
+                                    <button type="button" class="btn btn-outline-danger btn-sm bt1" (click)="deleteEditorial(item.id_editorial)">
+                                        <i class="fa-solid fa-trash f1"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>   
+            </div> 
+        </div> <!-- CIERRA CONTENIDO-->
+    </div>
+</div>

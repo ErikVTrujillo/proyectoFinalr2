@@ -1,0 +1,142 @@
+<div class="container-fluid">
+    <div class="row"> <!-- CUERPO -->
+        <div class="lat col-sm-2 ml"> <!-- MENÚ LATERAL-->
+            <app-lateral></app-lateral>
+        </div> <!-- CIERRA MENÚ LATERAL-->
+        <div class="con col-sm-10"> <!-- CONTENIDO--> 
+            <form #libroForm="ngForm" (ngSubmit)="getLibroID(libroService.libro.id_libro)">
+                <div class="row aling-items-center ti">
+                    <p>Actualizar Libro</p>
+                </div>
+                <div class="row align-items-center d-usuario"> <!-- DATOS PARA BUSCAR LIBRO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3"> 
+                                <label for="id-libro" class="col-form-label">ID Libro:</label>
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" id="id-libro" class="form-control" placeholder="Ingresa ID Libro" name="id_libro" [(ngModel)]="libroService.libro.id_libro" >
+                            </div>
+                            <div class="col-sm-3 boton align-items-center">
+                                <button id="buscar" class="btn btn-warning" type="submit">
+                                    <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>  Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+                <hr>
+           <form  #libroActualizarForm="ngForm" (ngSubmit)="updateLibro(libroActualizarForm)"> 
+                <div class="row align-items-center d-usuario"> <!-- DATOS USUARIO-->
+                    <div class="col-sm-11 tdatos">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="id-libro2" class="col-form-label">ID Libro:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="id-libro2" class="form-control" placeholder="Ingresa ID Libro" name="id_libro" [(ngModel)]="libroService.libros[0].id_libro">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="tipo" class="col-form-label">Tipo:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="tipo" placeholder="Selecciona tipo" name="id_tipo" [(ngModel)]="libroService.libros[0].id_tipo">
+                                    <option selected >Selecciona tipo...</option>
+                                    <option *ngFor="let item of tipoService.tipos" [value]="item.id_tipo">{{item.nombre_tipo}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="titulo" class="col-form-label">Título:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="titulo" class="form-control" placeholder="Ingresa título" name="titulo" [(ngModel)]="libroService.libros[0].titulo">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="autor" class="col-form-label">Autor:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="autor" class="form-control" placeholder="Ingresa autor" name="autor" [(ngModel)]="libroService.libros[0].autor">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="editorial" class="col-form-label">Editorial:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="editorial" placeholder="Selecciona tipo" name="id_editorial" [(ngModel)]="libroService.libros[0].id_editorial">
+                                    <option selected >Selecciona tipo...</option>
+                                    <option *ngFor="let item of editorialService.editoriales" [value]="item.id_editorial">{{item.nombre_editorial}}</option>
+                                </select>  
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="categoria" class="col-form-label">Categoría:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="categoria" placeholder="Selecciona categoría" name="id_categoria" [(ngModel)]="libroService.libros[0].id_categoria">
+                                    <option selected >Selecciona categoría...</option>
+                                    <option *ngFor="let item of categoriaService.categorias" [value]="item.id_categoria">{{item.categoria}}</option>
+                                </select> 
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="ubicacion" class="col-form-label">Ubicación:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="ubicacion" class="form-control" placeholder="Ingresa ubicación" name="ubicacion" [(ngModel)]="libroService.libros[0].ubicacion">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="edicion" class="col-form-label">Edición:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="number" id="edicion" class="form-control" placeholder="Ingresa edición" name="edicion" [(ngModel)]="libroService.libros[0].edicion">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="volumen" class="col-form-label">Volumen:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="number" id="volumen" class="form-control" placeholder="Ingresa volumen" name="volumen" [(ngModel)]="libroService.libros[0].volumen">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="fecha-publi" class="col-form-label">Fecha publicación:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input input type="text" id="fecha-publi" class="form-control" placeholder="Ingresa fecha publicación" name="fecha_publicacion" [(ngModel)]="libroService.libros[0].fecha_publicacion">
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-sm-3">
+                                <label for="lugar-publi" class="col-form-label">Lugar publicación:</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="text" id="lugar-publi" class="form-control"
+                                    placeholder="Ingresa lugar publicación" name="lugar_publicacion" [(ngModel)]="libroService.libros[0].lugar_publicacion">
+                            </div>
+                        </div>
+
+                        <div class="row boton"> <!-- BOTÓN GUARDAR-->
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fa-solid fa-floppy-disk" style="color: #FFFFFF;"></i> Guardar
+                            </button>
+                        </div>
+                    </div>
+                </div> <!-- CIERRA DATOS USUARIO-->
+            </form>
+        </div> <!-- CIERRA CONTENIDO-->
+    </div>
+</div>

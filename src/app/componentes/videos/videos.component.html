@@ -1,0 +1,41 @@
+<div class="container mi-contenedor2 text-center mt-2 container-fluid">
+    <div class="card  ">
+        <h1 class="mt-4 title"><strong>Cuentos infantiles</strong></h1>
+        <div class="container mt-2">
+            <div class="row">
+                <div *ngFor="let v of videos" class="col-4">
+                    <youtube-player [videoId]="v.video" suggestedQuality="highres" [height]="200" [width]="300">
+                    </youtube-player>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mi-contenedor2 text-center mt-2 container-fluid">
+    <div class="card  ">
+        <h1 class="mt-4 title"><strong>Leyendas</strong></h1>
+        <div class="container mt-2">
+            <div class="row">
+                <div *ngFor="let v of videos1" class="col-4">
+                    <youtube-player [videoId]="v.video1" suggestedQuality="highres" [height]="200" [width]="300">
+                    </youtube-player>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mi-contenedor2 text-center mt-2 container-fluid">
+    <div class="card  ">
+        <h1 class="mt-4 title"><strong>Novelas</strong></h1>
+        <div class="container mt-2">
+            <div class="row">
+                <div *ngFor="let v of videos2" class="col-4">
+                    <youtube-player [videoId]="v.video2" suggestedQuality="highres" [height]="200" [width]="300">
+                    </youtube-player>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
